@@ -7,10 +7,10 @@ The first version consists of
 
 * pcap.db - SQLite database containing some data
 
-To install the required python packages
+To install the required python packages, run the following from a terminal.
 
 ```pip3 install -r requirements.txt```
 
-To run the application do the following from a terminal
+To run the application do the following from a terminal.
 
 ```python3 -m flask run --host=0.0.0.0 --port=5000```
