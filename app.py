@@ -22,12 +22,12 @@ def summary():
 def topsenders():
   sqlite_engine = create_engine('sqlite:///capture.db')
   query = ''\
-    'select traffic.ip_sender, dns.host_name as host_name_sender, sum(bytes) as total_bytes_sent'\
-    'from traffic'\
-    'left join dns'\
-    'ON traffic.ip_sender = dns.ip_address'\
-    'where traffic.ip = 1'\
-    'group by ip_sender'\
+    'select traffic.ip_sender, dns.host_name as host_name_sender, sum(bytes) as total_bytes_sent '\
+    'from traffic '\
+    'left join dns '\
+    'ON traffic.ip_sender = dns.ip_address '\
+    'where traffic.ip = 1 '\
+    'group by ip_sender '\
     'order by total_bytes_sent desc'
   totalBytes = pd.read_sql(sql = query, con = sqlite_engine)
   return totalBytes.to_html()
